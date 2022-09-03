@@ -5,3 +5,12 @@ api-version: 1.17
 authors: [ kumitatepazuru ]
 description: スキンをいじくり回せるプラグインです
 website: https://www.inu-dev.tech/
+commands:
+  reloadskin:
+    description: スキンをリロードします
+    permission: changeskin.reload
+
+permissions:
+  changeskin.reload:
+    description: スキンをリロードする権限
+    default: op
