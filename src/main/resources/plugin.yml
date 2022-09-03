@@ -1,0 +1,7 @@
+name: ChangePlayerSkin
+version: '${version}'
+main: tech.inudev.changeskin.ChangePlayerSkin
+api-version: 1.17
+authors: [ kumitatepazuru ]
+description: スキンをいじくり回せるプラグインです
+website: https://www.inu-dev.tech/

@@ -1,0 +1,8 @@
+projectId: test
+downloadUrl: "https://data.inu-dev.tech"
+bucketName: bucket
+prefix: "mcskin"
+
+teamData:
+  - team: skin
+    skin: "https://data.inu-dev.tech/mcskin/skin.png"
