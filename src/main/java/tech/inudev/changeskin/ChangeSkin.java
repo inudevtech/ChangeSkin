@@ -1,5 +1,6 @@
 package tech.inudev.changeskin;
 
+import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.BlobId;
 import com.google.cloud.storage.BlobInfo;
@@ -22,6 +23,7 @@ import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -93,7 +95,8 @@ public final class ChangeSkin extends JavaPlugin implements Listener {
                 ImageIO.write(user_skin, "png", baos);
                 baos.flush();
 
-                Storage storage = StorageOptions.newBuilder().setProjectId(projectId).build().getService();
+                Storage storage = StorageOptions.newBuilder().setProjectId(projectId).setCredentials(GoogleCredentials.fromStream(new
+                        FileInputStream(getDataFolder().getAbsolutePath()+"/key.json"))).build().getService();
                 BlobId blobId = BlobId.of(bucketName, prefix+"/"+player.getUniqueId() +".png");
                 BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
                 try (WriteChannel writer = storage.writer(blobInfo)) {
