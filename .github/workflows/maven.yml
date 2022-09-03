@@ -33,6 +33,6 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           server: ${{ secrets.SSH_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
-          local_path: './target/GakuenPlugin.jar'
+          local_path: './build/libs/ChangeSkin.jar'
           remote_path: '/var/minecraft/gorakuba-undoukai/plugins'
           args: '-o ConnectTimeout=5'
