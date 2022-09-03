@@ -59,7 +59,7 @@ public final class ChangeSkin extends JavaPlugin implements Listener {
     @EventHandler
     public void onPlayerResourcePackStatus(PlayerResourcePackStatusEvent e) {
         if (e.getStatus() == PlayerResourcePackStatusEvent.Status.SUCCESSFULLY_LOADED) {
-            teamData.forEach((t) -> ChangePlayerSkin(e.getPlayer(), t.get("team"), t.get("base")));
+            teamData.forEach((t) -> ChangePlayerSkin(e.getPlayer(), t.get("team"), t.get("skin")));
         }
     }
 
