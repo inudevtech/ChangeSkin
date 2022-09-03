@@ -1,6 +1,6 @@
 name: ChangePlayerSkin
 version: '${version}'
-main: tech.inudev.changeskin.ChangePlayerSkin
+main: tech.inudev.changeskin.ChangeSkin
 api-version: 1.17
 authors: [ kumitatepazuru ]
 description: スキンをいじくり回せるプラグインです
