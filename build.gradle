@@ -57,3 +57,7 @@ processResources {
 jar {
     archiveFileName = 'ChangeSkin.jar'
 }
+
+shadowJar {
+    archiveFileName = 'ChangeSkin.jar'
+}
