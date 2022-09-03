@@ -22,8 +22,12 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
           cache: maven
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@e6e38bacfdf1a337459f332974bb2327a31aaf4b
+      - name: Build with Gradle
+        uses: gradle/gradle-build-action@67421db6bd0bf253fb4bd25b31ebb98943c375e1
+        with:
+          arguments: build
       - name: deploy file
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
@@ -31,5 +35,5 @@ jobs:
           server: ${{ secrets.SSH_SERVER }}
           ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
           local_path: './target/GakuenPlugin.jar'
-          remote_path: '/var/minecraft/gorakuba-gakuen/plugins'
+          remote_path: '/var/minecraft/gorakuba-undoukai/plugins'
           args: '-o ConnectTimeout=5'
