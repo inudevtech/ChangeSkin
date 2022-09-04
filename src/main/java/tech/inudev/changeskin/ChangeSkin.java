@@ -88,7 +88,7 @@ public final class ChangeSkin extends JavaPlugin implements Listener {
                 BufferedImage img1 = ImageIO.read(new URL("https://crafatar.com/skins/" + player.getUniqueId()));
                 BufferedImage img2 = ImageIO.read(new URL(baseUrl));
                 BufferedImage user_skin = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
-                img1 = img1.getSubimage(0, 0, 64, 16);
+                img1 = img1.getSubimage(0, 0, 64, 32);
                 Graphics g = user_skin.getGraphics();
                 g.drawImage(img1, 0, 0, null);
                 g.drawImage(img2, 0, 16, null);
