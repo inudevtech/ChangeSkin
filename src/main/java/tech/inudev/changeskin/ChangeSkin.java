@@ -97,7 +97,7 @@ public final class ChangeSkin extends JavaPlugin implements Listener {
 
                 Storage storage = StorageOptions.newBuilder().setProjectId(projectId).setCredentials(GoogleCredentials.fromStream(new
                         FileInputStream(getDataFolder().getAbsolutePath()+"/key.json"))).build().getService();
-                BlobId blobId = BlobId.of(bucketName, prefix+"/"+player.getUniqueId() +".png");
+                BlobId blobId = BlobId.of(bucketName, player.getUniqueId() +".png");
                 BlobInfo blobInfo = BlobInfo.newBuilder(blobId).build();
                 try (WriteChannel writer = storage.writer(blobInfo)) {
                     writer.write(ByteBuffer.wrap(baos.toByteArray()));
