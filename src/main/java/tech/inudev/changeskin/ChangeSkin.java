@@ -83,8 +83,8 @@ public final class ChangeSkin extends JavaPlugin implements Listener {
 
     public void ChangePlayerSkin(Player player, String team, String baseUrl) {
         try {
-            getLogger().info(String.valueOf(player.getScoreboard().getTeams().stream().map(Team::getName).toList()));
-            if (player.getScoreboard().getTeams().stream().map(Team::getName).toList().contains(team)) {
+            getLogger().info(String.valueOf(Objects.requireNonNull(player.getScoreboard().getTeam(team)).getEntries()));
+            if (Objects.requireNonNull(player.getScoreboard().getTeam(team)).getEntries().contains(player.getName())) {
                 BufferedImage img1 = ImageIO.read(new URL("https://crafatar.com/skins/" + player.getUniqueId()));
                 BufferedImage img2 = ImageIO.read(new URL(baseUrl));
                 BufferedImage user_skin = new BufferedImage(64, 64, BufferedImage.TYPE_INT_ARGB);
